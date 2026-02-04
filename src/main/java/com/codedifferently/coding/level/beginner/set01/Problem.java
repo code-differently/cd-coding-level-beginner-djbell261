@@ -16,9 +16,45 @@ public class Problem {
 
     public static Boolean avengersAssemble(boolean dcHero, boolean avengerHero) {
 
-        return null;
+        String callToAction = "AVENGERS ASSEMBLE";
+        boolean aHero;
+
+
+        if(!dcHero && !avengerHero)
+        {
+            aHero = true;
+            System.out.println(callToAction);
+
+
+        }
+        else if (!dcHero) {
+            aHero = true;
+            System.out.println(callToAction);
+
+        }
+        else if (avengerHero) {
+            aHero = true;
+            System.out.println(callToAction);
+        }
+        else
+        {
+            aHero = false;
+        }
+
+        return aHero;
 
     }
+
+    public static void main(String[] args) {
+
+
+        avengersAssemble(true, true);
+
+
+
+
+
+     }
 
     /* Problem 3
     You and your friends are out walking on the boardwalk at Atlantic City
@@ -32,6 +68,10 @@ public class Problem {
      */
 
     public static Boolean nearValue(int n) {
+
+
+
+
 
         return null;
     }
