@@ -54,6 +54,8 @@ public class Problem {
 
         System.out.println(b);
 
+        System.out.println(missingLetter("kitten", 1));
+
 
     }
 
@@ -88,17 +90,19 @@ public class Problem {
      */
 
     public static String missingLetter(String letter, int n) {
-        String newLetter;
-        if( (n >= 0) && (n <= letter.length()-1) ) {
-            for (int i =0; i <= letter.length()-1; i++)
-            {
-                if (i == n){
 
-                }
 
-            }
-            return null;
+        String newString;
+        if (n >= 0 && n <= letter.length() - 1) {
+            newString = letter.substring(n-1, n);
+            return newString;
         }
+        else
+        {
+            return "NOT VALID INDEX";
+        }
+
+
     }
 
     /* Problem 5
