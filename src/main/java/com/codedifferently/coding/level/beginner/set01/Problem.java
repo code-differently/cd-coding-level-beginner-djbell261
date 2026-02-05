@@ -50,11 +50,12 @@ public class Problem {
 
         avengersAssemble(true, true);
 
+        boolean b = nearValue(Math.abs(93));
+
+        System.out.println(b);
 
 
-
-
-     }
+    }
 
     /* Problem 3
     You and your friends are out walking on the boardwalk at Atlantic City
@@ -70,10 +71,10 @@ public class Problem {
     public static Boolean nearValue(int n) {
 
 
+        return (90 <= n) && (n <= 100) || (190 <= n) && (n <= 200);
 
 
 
-        return null;
     }
 
      /* Problem 4
@@ -87,8 +88,17 @@ public class Problem {
      */
 
     public static String missingLetter(String letter, int n) {
+        String newLetter;
+        if( (n >= 0) && (n <= letter.length()-1) ) {
+            for (int i =0; i <= letter.length()-1; i++)
+            {
+                if (i == n){
 
-        return null;
+                }
+
+            }
+            return null;
+        }
     }
 
     /* Problem 5
