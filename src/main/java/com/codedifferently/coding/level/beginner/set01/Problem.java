@@ -20,24 +20,19 @@ public class Problem {
         boolean aHero;
 
 
-        if(!dcHero && !avengerHero)
-        {
+        if (!dcHero && !avengerHero) {
             aHero = true;
             System.out.println(callToAction);
 
 
-        }
-        else if (!dcHero) {
+        } else if (!dcHero) {
             aHero = true;
             System.out.println(callToAction);
 
-        }
-        else if (avengerHero) {
+        } else if (avengerHero) {
             aHero = true;
             System.out.println(callToAction);
-        }
-        else
-        {
+        } else {
             aHero = false;
         }
 
@@ -45,19 +40,7 @@ public class Problem {
 
     }
 
-    public static void main(String[] args) {
 
-
-        avengersAssemble(true, true);
-
-        boolean b = nearValue(Math.abs(93));
-
-        System.out.println(b);
-
-        System.out.println(missingLetter("kitten", 1));
-
-
-    }
 
     /* Problem 3
     You and your friends are out walking on the boardwalk at Atlantic City
@@ -74,7 +57,6 @@ public class Problem {
 
 
         return (90 <= n) && (n <= 100) || (190 <= n) && (n <= 200);
-
 
 
     }
@@ -94,11 +76,10 @@ public class Problem {
 
         String newString;
         if (n >= 0 && n <= letter.length() - 1) {
-            newString = letter.substring(n-1, n);
-            return newString;
-        }
-        else
-        {
+            String firstHalf = letter.substring(0, n);
+            String lastHalf = letter.substring(n + 1, letter.length());
+            return newString = firstHalf + lastHalf;
+        } else {
             return "NOT VALID INDEX";
         }
 
@@ -117,7 +98,11 @@ public class Problem {
 
     public static String wordOfDay(String word) {
 
-        return null;
+
+        char lastChar = word.charAt(word.length() - 1);
+
+
+        return lastChar + word + lastChar;
     }
 
     /* Problem 6
@@ -130,7 +115,10 @@ public class Problem {
 
     public static Boolean beginWithHi(String phrase) {
 
-        return null;
+        String hi = phrase.substring(0, 2);
+
+        return hi.equals("hi");
+
     }
 
      /* Problem 7
@@ -142,10 +130,27 @@ public class Problem {
     containTeen(20, 10, 13) --> true
      */
 
-    public static Boolean containTeen(int one, int two, int three){
+    public static Boolean containTeen(int one, int two, int three) {
 
-        return null;
+        if ((one >= 13) && (one <= 19)) {
+
+            return true;
+
+        } else if ((two >= 13) && (two <= 19)) {
+
+            return true;
+
+        } else if ((three >= 13) && (three <= 19)) {
+
+            return true;
+        } else {
+            return false;
+
+        }
+
+
     }
+
 
     /* Problem 8
     Your local rapper is looking to create his next hook for his next track. He wants to add phrases that begin with "mix".
@@ -158,8 +163,10 @@ public class Problem {
      */
 
     public static Boolean startWithIx(String phrase) {
+        String iX = phrase.substring(1, 3);
 
-        return null;
+
+        return iX.equals("ix");
     }
 
      /* Problem 9
@@ -173,9 +180,19 @@ public class Problem {
     near10(13, 7) --> 0
      */
 
-    public static Integer near10(int one, int two){
+    public static Integer near10(int one, int two) {
 
-        return null;
+
+        int compare1 = 10 - one;
+        int compare2 = 10 - two;
+        if (Math.abs(compare1) < Math.abs(compare2)) {
+            return one;
+        } else if (Math.abs(compare2) < Math.abs(compare1)) {
+            return two;
+        } else {
+            return 0;
+        }
+
     }
 
     /* Problem 10
@@ -187,7 +204,29 @@ public class Problem {
      */
 
     public static Boolean containE(String str) {
+        int occurrences = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'e') {
+                occurrences++;
+            }
 
-        return null;
+        }
+        return (occurrences >= 1) && (occurrences <= 3);
+    }
+
+
+    public static void main(String[] args) {
+        avengersAssemble(true, true);
+        boolean b = nearValue(Math.abs(93));
+        System.out.println(b);
+        System.out.println(missingLetter("kitten", 4));
+        System.out.println(wordOfDay("Hello"));
+        System.out.println(beginWithHi("hey hello"));
+        System.out.println(containTeen(1, 10, 30));
+        System.out.println(startWithIx("miz snack"));
+        System.out.println(near10(8, 12));
+        System.out.println(containE("Heelele"));
+
+
     }
 }
